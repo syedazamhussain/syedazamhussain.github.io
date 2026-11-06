@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAH Labs | Official Apps & Publisher Portfolio</title>
+  <meta name="description" content="Official Android utilities and games published by SAH Labs: Quick QR, Digital Tasbeeh, and Classic Solitaire." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-hover: #0ea5e9;
+      --badge-free: #10b981;
+      --badge-ad: #f59e0b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 0 1.25rem 3rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 3.5rem 0 2rem;
+      text-align: center;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .brand-tag {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    header h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1.25rem;
+      color: #ffffff;
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .app-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .app-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+
+    .app-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+    }
+
+    .app-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .package-name {
+      display: block;
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+    }
+
+    .badge.free {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--badge-free);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .badge.ads {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--badge-ad);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .app-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .btn {
+      display: inline-block;
+      text-align: center;
+      background: var(--accent);
+      color: #0f172a;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.65rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn:hover {
+      background: var(--accent-hover);
+    }
+
+    .info-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-top: 1rem;
+    }
+
+    .info-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .info-card a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .info-card a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 3.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--card-border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="brand-tag">Developer & Publisher Hub</span>
+      <h1>SAH Labs</h1>
+      <p>Clean, performance-focused mobile utilities and experiences published by SAH Labs.</p>
+    </header>
+
+    <main>
+      <h2 class="section-title">Our Applications</h2>
+      <div class="apps-grid">
+        <!-- Quick QR -->
+        <div class="app-card">
+          <div>
+            <div class="app-header">
+              <h3 class="app-title">Quick QR</h3>
+              <span class="badge ads">Free with Ads</span>
+            </div>
+            <span class="package-name">com.sahdeveloper.quickqr</span>
+            <p class="app-desc">
+              High-speed camera scanner and custom QR code generator. Built with offline capabilities, automatic autofocus, and instant scan history.
+            </p>
+          </div>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.sahdeveloper.quickqr" target="_blank" rel="noopener">View on Google Play</a>
+        </div>
+
+        <!-- Digital Tasbeeh -->
+        <div class="app-card">
+          <div>
+            <div class="app-header">
+              <h3 class="app-title">Tasbeeh: Digital Dhikr Counter</h3>
+              <span class="badge free">100% Free / Ad-Free</span>
+            </div>
+            <span class="package-name">com.sahdeveloper.tasbeeh</span>
+            <p class="app-desc">
+              A distraction-free, minimalist digital counter utility. Lightweight, battery-efficient, fully offline, and completely ad-free.
+            </p>
+          </div>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.sahdeveloper.tasbeeh" target="_blank" rel="noopener">View on Google Play</a>
+        </div>
+
+        <!-- Classic Solitaire -->
+        <div class="app-card">
+          <div>
+            <div class="app-header">
+              <h3 class="app-title">Classic Solitaire</h3>
+              <span class="badge ads">Free with Ads</span>
+            </div>
+            <span class="package-name">com.sahdeveloper.solitaire</span>
+            <p class="app-desc">
+              Smooth and responsive Klondike Solitaire card game. Features fluid card movement animations, clean UI layouts, and offline play.
+            </p>
+          </div>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.sahdeveloper.solitaire" target="_blank" rel="noopener">View on Google Play</a>
+        </div>
+      </div>
+
+      <h2 class="section-title">Developer & Ad Transparency</h2>
+      <div class="info-card">
+        <p><strong>Publisher Name:</strong> SAH Labs</p>
+        <p><strong>Developer Namespace:</strong> com.sahdeveloper</p>
+        <p><strong>Support & Inquiries:</strong> <a href="mailto:azamdeveloper.app@gmail.com">azamdeveloper.app@gmail.com</a></p>
+        <p>
+          <strong>Ad Transparency:</strong> This root domain hosts the official <code>app-ads.txt</code> verification file for our authorized ad inventory: 
+          <a href="/app-ads.txt">View app-ads.txt</a>
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 SAH Labs. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
