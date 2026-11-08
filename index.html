@@ -15,8 +15,8 @@
       --text-muted: #64748b;
       --accent-blue: #0284c7;
       --border-color: #e2e8f0;
-      --btn-grad-start: #0077e6;
-      --btn-grad-end: #0099ff;
+      --btn-bg: #00875a;
+      --btn-hover: #00704a;
     }
 
     * {
@@ -40,7 +40,7 @@
 
     header {
       text-align: center;
-      margin-bottom: 52px;
+      margin-bottom: 48px;
     }
 
     .badge {
@@ -54,7 +54,7 @@
     }
 
     header h1 {
-      font-size: 40px;
+      font-size: 38px;
       font-weight: 800;
       letter-spacing: -0.5px;
       margin-bottom: 12px;
@@ -105,11 +105,11 @@
     }
 
     .app-icon {
-      width: 64px;
-      height: 64px;
+      width: 60px;
+      height: 60px;
       border-radius: 14px;
       object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
       border: 1px solid #f1f5f9;
       background: #f1f5f9;
       flex-shrink: 0;
@@ -146,27 +146,28 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 10px;
       width: 100%;
-      background: linear-gradient(135deg, var(--btn-grad-start), var(--btn-grad-end));
+      background: #01875f;
       color: #ffffff;
       text-decoration: none;
       font-size: 14px;
       font-weight: 600;
       padding: 12px 16px;
       border-radius: 10px;
-      transition: opacity 0.2s ease;
+      transition: background-color 0.2s ease;
       text-align: center;
     }
 
     .install-btn:hover {
-      opacity: 0.92;
+      background-color: #016f4e;
     }
 
     .install-btn svg {
-      width: 18px;
-      height: 18px;
+      width: 17px;
+      height: 17px;
       fill: currentColor;
+      flex-shrink: 0;
     }
 
     .dev-transparency {
