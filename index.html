@@ -3,262 +3,311 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SAH Labs | Official Apps & Publisher Portfolio</title>
-  <meta name="description" content="Official Android utilities and games published by SAH Labs: Quick QR, Digital Tasbeeh, and Classic Solitaire." />
+  <title>SAH Labs | Official Apps & Developer Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* Default: Clean Light Theme */
     :root {
       --bg: #f8fafc;
       --card-bg: #ffffff;
-      --card-border: #e2e8f0;
-      --text: #0f172a;
+      --text-main: #0f172a;
       --text-muted: #64748b;
-      --accent: #0284c7;
-      --accent-hover: #0369a1;
-      --btn-text: #ffffff;
-      --info-bg: #f1f5f9;
-    }
-
-    /* Auto switch if user device prefers Dark Theme */
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0f172a;
-        --card-bg: #1e293b;
-        --card-border: #334155;
-        --text: #f8fafc;
-        --text-muted: #94a3b8;
-        --accent: #38bdf8;
-        --accent-hover: #0ea5e9;
-        --btn-text: #0f172a;
-        --info-bg: #1e293b;
-      }
+      --accent-blue: #0284c7;
+      --border-color: #e2e8f0;
+      --btn-grad-start: #0077e6;
+      --btn-grad-end: #0099ff;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      padding: 0 1.25rem 3rem;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      color: var(--text-main);
+      padding: 48px 20px;
+      line-height: 1.5;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
     header {
-      padding: 3.5rem 0 2rem;
       text-align: center;
-      border-bottom: 1px solid var(--card-border);
+      margin-bottom: 52px;
     }
 
-    .brand-tag {
+    .badge {
       display: inline-block;
-      font-size: 0.85rem;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
+      letter-spacing: 1.5px;
+      color: var(--accent-blue);
+      margin-bottom: 12px;
     }
 
     header h1 {
-      font-size: 2.25rem;
+      font-size: 40px;
       font-weight: 800;
-      color: var(--text);
-      margin-bottom: 0.5rem;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
     }
 
     header p {
-      font-size: 1.05rem;
+      font-size: 16px;
       color: var(--text-muted);
       max-width: 600px;
       margin: 0 auto;
     }
 
     .section-title {
-      font-size: 1.5rem;
+      font-size: 22px;
       font-weight: 700;
-      margin: 2.5rem 0 1.25rem;
-      color: var(--text);
+      margin-bottom: 24px;
+      letter-spacing: -0.3px;
     }
 
     .apps-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-bottom: 48px;
     }
 
     .app-card {
       background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      padding: 1.5rem;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 24px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .app-card:hover {
       transform: translateY(-4px);
-      border-color: var(--accent);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.08);
     }
 
     .app-header {
-      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
     }
 
-    .app-title {
-      font-size: 1.25rem;
+    .app-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      border: 1px solid #f1f5f9;
+      background: #f1f5f9;
+      flex-shrink: 0;
+    }
+
+    .app-title-area {
+      overflow: hidden;
+    }
+
+    .app-title-area h3 {
+      font-size: 17px;
       font-weight: 700;
-      color: var(--text);
+      color: var(--text-main);
+      line-height: 1.3;
+      margin-bottom: 4px;
     }
 
     .package-name {
+      font-size: 11.5px;
+      color: var(--accent-blue);
+      font-family: monospace;
+      word-break: break-all;
       display: block;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 0.78rem;
-      color: var(--accent);
-      margin-bottom: 0.85rem;
     }
 
     .app-desc {
-      font-size: 0.92rem;
+      font-size: 13.5px;
       color: var(--text-muted);
-      margin-bottom: 1.5rem;
-      flex-grow: 1;
+      margin-bottom: 24px;
+      line-height: 1.5;
     }
 
-    .btn {
-      display: inline-block;
+    .install-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: linear-gradient(135deg, var(--btn-grad-start), var(--btn-grad-end));
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 16px;
+      border-radius: 10px;
+      transition: opacity 0.2s ease;
       text-align: center;
-      background: var(--accent);
-      color: var(--btn-text);
+    }
+
+    .install-btn:hover {
+      opacity: 0.92;
+    }
+
+    .install-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .dev-transparency {
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .dev-transparency h3 {
+      font-size: 18px;
       font-weight: 700;
-      font-size: 0.9rem;
-      padding: 0.65rem 1rem;
-      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+
+    .dev-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 14px;
+      color: #334155;
+    }
+
+    .dev-info-list span {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .dev-info-list a {
+      color: var(--accent-blue);
       text-decoration: none;
-      transition: background-color 0.2s ease;
     }
 
-    .btn:hover {
-      background: var(--accent-hover);
-    }
-
-    .info-card {
-      background: var(--info-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      padding: 1.75rem;
-      margin-top: 1rem;
-    }
-
-    .info-card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .info-card a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .info-card a:hover {
+    .dev-info-list a:hover {
       text-decoration: underline;
     }
 
-    footer {
-      margin-top: 3.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--card-border);
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.85rem;
+    @media (max-width: 768px) {
+      .apps-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
+
   <div class="container">
     <header>
-      <span class="brand-tag">Developer & Publisher Hub</span>
+      <span class="badge">DEVELOPER & PUBLISHER HUB</span>
       <h1>SAH Labs</h1>
       <p>Clean, performance-focused mobile utilities and games published on Google Play.</p>
     </header>
 
-    <main>
-      <h2 class="section-title">Our Applications</h2>
-      <div class="apps-grid">
-        <!-- Quick QR -->
-        <div class="app-card">
-          <div>
-            <div class="app-header">
-              <h3 class="app-title">Quick QR</h3>
-            </div>
-            <span class="package-name">com.sahdeveloper.quickqr</span>
-            <p class="app-desc">
-              High-speed camera scanner and custom code generator. Optimized for instant autofocus, local scan history, and privacy-focused offline processing.
-            </p>
-          </div>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.sahdeveloper.quickqr" target="_blank" rel="noopener">View on Google Play</a>
-        </div>
+    <h2 class="section-title">Our Applications</h2>
 
-        <!-- Digital Tasbeeh -->
-        <div class="app-card">
-          <div>
-            <div class="app-header">
-              <h3 class="app-title">Tasbeeh: Digital Dhikr Counter</h3>
+    <div class="apps-grid">
+      
+      <!-- Quick QR -->
+      <div class="app-card">
+        <div>
+          <div class="app-header">
+            <img class="app-icon" src="icons/quickqr.png" alt="Quick QR Icon" onerror="this.src='https://placehold.co/128x128/0284c7/white?text=QR'">
+            <div class="app-title-area">
+              <h3>Quick QR</h3>
+              <span class="package-name">com.sahdeveloper.quickqr</span>
             </div>
-            <span class="package-name">com.sahdeveloper.tasbeeh</span>
-            <p class="app-desc">
-              A distraction-free, minimalist digital counter utility. Lightweight, battery-efficient, and operates entirely offline.
-            </p>
           </div>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.sahdeveloper.tasbeeh" target="_blank" rel="noopener">View on Google Play</a>
+          <p class="app-desc">High-speed camera scanner and custom code generator. Optimized for instant autofocus, local scan history, and privacy-focused offline processing.</p>
         </div>
-
-        <!-- Classic Solitaire -->
-        <div class="app-card">
-          <div>
-            <div class="app-header">
-              <h3 class="app-title">Classic Solitaire</h3>
-            </div>
-            <span class="package-name">com.sahdeveloper.solitaire</span>
-            <p class="app-desc">
-              Smooth and responsive Klondike Solitaire card game. Features fluid card movement animations, clean UI layouts, and complete offline play.
-            </p>
-          </div>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.sahdeveloper.solitaire" target="_blank" rel="noopener">View on Google Play</a>
-        </div>
+        <a class="install-btn" href="https://play.google.com/store/apps/details?id=com.sahdeveloper.quickqr" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.793 12 3.61 22.186c-.347-.31-.559-.75-.559-1.246V3.06c0-.495.212-.936.558-1.246zM15.207 13.414l2.586 2.586-13.06 7.464 10.474-10.05zm0-2.828L4.733.536 17.793 8l-2.586 2.586zm1.414 1.414l3.535-2.02c.866-.495.866-1.303 0-1.798L16.621 12l3.535 2.02c.866.495.866 1.303 0 1.798l-3.535-2.02z"/></svg>
+          Install on Google Play
+        </a>
       </div>
 
-      <h2 class="section-title">Developer & Ad Transparency</h2>
-      <div class="info-card">
-        <p><strong>Publisher Name:</strong> SAH Labs</p>
-        <p><strong>Developer Namespace:</strong> com.sahdeveloper</p>
-        <p><strong>Support & Inquiries:</strong> <a href="mailto:azamdeveloper.app@gmail.com">azamdeveloper.app@gmail.com</a></p>
-        <p>
-          <strong>Ad Transparency:</strong> This root domain hosts the official <code>app-ads.txt</code> verification file for our authorized ad inventory: 
-          <a href="/app-ads.txt">View app-ads.txt</a>
-        </p>
+      <!-- Tasbeeh -->
+      <div class="app-card">
+        <div>
+          <div class="app-header">
+            <img class="app-icon" src="icons/tasbeeh.png" alt="Tasbeeh Icon" onerror="this.src='https://placehold.co/128x128/10b981/white?text=Dhikr'">
+            <div class="app-title-area">
+              <h3>Tasbeeh: Digital Dhikr</h3>
+              <span class="package-name">com.sahdeveloper.tasbeeh</span>
+            </div>
+          </div>
+          <p class="app-desc">A distraction-free, minimalist digital counter utility. Lightweight, battery-efficient, and operates entirely offline with tactile haptic feedback.</p>
+        </div>
+        <a class="install-btn" href="https://play.google.com/store/apps/details?id=com.sahdeveloper.tasbeeh" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.793 12 3.61 22.186c-.347-.31-.559-.75-.559-1.246V3.06c0-.495.212-.936.558-1.246zM15.207 13.414l2.586 2.586-13.06 7.464 10.474-10.05zm0-2.828L4.733.536 17.793 8l-2.586 2.586zm1.414 1.414l3.535-2.02c.866-.495.866-1.303 0-1.798L16.621 12l3.535 2.02c.866.495.866 1.303 0 1.798l-3.535-2.02z"/></svg>
+          Install on Google Play
+        </a>
       </div>
-    </main>
 
-    <footer>
-      <p>&copy; 2026 SAH Labs. All rights reserved.</p>
-    </footer>
+      <!-- Solitaire Classic -->
+      <div class="app-card">
+        <div>
+          <div class="app-header">
+            <img class="app-icon" src="icons/solitaire.png" alt="Solitaire Icon" onerror="this.src='https://placehold.co/128x128/22c55e/white?text=Cards'">
+            <div class="app-title-area">
+              <h3>Solitaire Classic</h3>
+              <span class="package-name">com.sahdeveloper.solitaire</span>
+            </div>
+          </div>
+          <p class="app-desc">Smooth and responsive Klondike Solitaire card game. Features fluid card movement animations, clean UI layouts, tap-to-move, and complete offline play.</p>
+        </div>
+        <a class="install-btn" href="https://play.google.com/store/apps/details?id=com.sahdeveloper.solitaire" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.793 12 3.61 22.186c-.347-.31-.559-.75-.559-1.246V3.06c0-.495.212-.936.558-1.246zM15.207 13.414l2.586 2.586-13.06 7.464 10.474-10.05zm0-2.828L4.733.536 17.793 8l-2.586 2.586zm1.414 1.414l3.535-2.02c.866-.495.866-1.303 0-1.798L16.621 12l3.535 2.02c.866.495.866 1.303 0 1.798l-3.535-2.02z"/></svg>
+          Install on Google Play
+        </a>
+      </div>
+
+      <!-- Arrow Away: Puzzle Escape -->
+      <div class="app-card">
+        <div>
+          <div class="app-header">
+            <img class="app-icon" src="icons/arrowpuzzle.png" alt="Arrow Away Icon" onerror="this.src='https://placehold.co/128x128/f59e0b/white?text=Arrow'">
+            <div class="app-title-area">
+              <h3>Arrow Away</h3>
+              <span class="package-name">com.sahdeveloper.arrowpuzzle</span>
+            </div>
+          </div>
+          <p class="app-desc">Minimalist direction puzzle escape game. Untangle arrow pathways, plan sequential clearing moves, and exercise your brain with progressive levels offline.</p>
+        </div>
+        <a class="install-btn" href="https://play.google.com/store/apps/details?id=com.sahdeveloper.arrowpuzzle" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.793 12 3.61 22.186c-.347-.31-.559-.75-.559-1.246V3.06c0-.495.212-.936.558-1.246zM15.207 13.414l2.586 2.586-13.06 7.464 10.474-10.05zm0-2.828L4.733.536 17.793 8l-2.586 2.586zm1.414 1.414l3.535-2.02c.866-.495.866-1.303 0-1.798L16.621 12l3.535 2.02c.866.495.866 1.303 0 1.798l-3.535-2.02z"/></svg>
+          Install on Google Play
+        </a>
+      </div>
+
+    </div>
+
+    <div class="dev-transparency">
+      <h3>Developer & Ad Transparency</h3>
+      <div class="dev-info-list">
+        <div><span>Publisher Name:</span> SAH Labs</div>
+        <div><span>Developer Namespace:</span> com.sahdeveloper</div>
+        <div><span>Support & Inquiries:</span> <a href="mailto:azamdeveloper.app@gmail.com">azamdeveloper.app@gmail.com</a></div>
+        <div><span>Ad Transparency:</span> This root domain hosts the official app-ads.txt verification file for our authorized ad inventory: <a href="/app-ads.txt" target="_blank">View app-ads.txt</a></div>
+      </div>
+    </div>
   </div>
+
 </body>
 </html>
